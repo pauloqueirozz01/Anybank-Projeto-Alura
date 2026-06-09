@@ -10,14 +10,18 @@ class Conta {
     _saldo += value;
     //esse += é a mesma coisa de escrever conta._saldo = conta._saldo + value;
     print("$nome recebeu uma transferência no value de $value");
-    print("_Saldo da conta atualizado: $_saldo");
+    printCurrent();
     print("");
   }
 
   void send(double value) {
     _saldo -= value;
     print("$nome fez uma transferência no valor de $value");
-    print("_Saldo da conta atualizado: $_saldo");
+    printCurrent();
     print("");
+  }
+
+  void printCurrent() {
+    print("O saldo atual de $nome, é: R\$$_saldo");
   }
 }

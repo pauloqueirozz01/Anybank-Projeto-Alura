@@ -10,14 +10,12 @@ void main() {
 
   List<Conta> contas = <Conta>[contaValentina, contaPaulo];
 
-  print(contaPaulo.nome);
-  print(contaPaulo._saldo);
-
-  contaPaulo._saldo = 2500;
-  print(contaPaulo._saldo);
-
+  contaPaulo.receiving(2500);
   contaPaulo.receiving(500);
   contaPaulo.send(200);
+
+  contaValentina.receiving(200);
+  contaValentina.send(126);
   // Para exibir todas as contas que existem dentro da lista,
   // vamos utilizar um for in para percorrer a conta in Contas
 
@@ -25,8 +23,7 @@ void main() {
   print("Mostrando todas as contas existentes:");
 
   for (Conta conta in contas) {
-    print("Titular da conta: ${conta.nome}");
-    print("${conta.nome}, saldo da conta atualizado: ${conta._saldo}");
+    conta.printCurrent();
     print("");
   }
 }
