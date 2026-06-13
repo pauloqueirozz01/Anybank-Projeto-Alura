@@ -25,3 +25,16 @@ class Conta {
     print("O saldo atual de $nome, é: R\$$_saldo");
   }
 }
+
+// A forma como é feita herança dentro do Dart, usa extends para herdar as caracteristicas da Classe principal
+
+// Criamos outro tipo de Conta, que ainda é uma Conta.
+// Mas sendo uma ContaCorrente, utilizamos extends Conta,
+// para recebermos nome e o _saldo, da class Conta
+class ContaCorrente extends Conta {
+  ContaCorrente(super.nome, super._saldo);
+}
+
+class ContaPoupanca extends Conta {
+  ContaPoupanca(super.nome, super._saldo);
+}

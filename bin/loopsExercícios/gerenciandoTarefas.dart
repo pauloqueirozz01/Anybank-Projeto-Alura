@@ -7,8 +7,6 @@
 
 // Crie uma função que receba a lista de tarefas e exiba todas as tarefas.
 
-import 'dart:io';
-
 void main() {
   List<String> tarefas = ["Estudar", "Comprar mantimentos"];
 

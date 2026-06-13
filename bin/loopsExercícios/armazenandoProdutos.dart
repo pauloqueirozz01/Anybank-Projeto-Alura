@@ -9,7 +9,6 @@ conte quantas vezes o item "maçã" aparece na lista de produtos.
 
 List<String> produtos = ["maçã", "banana", "maçã", "laranja", "maçã"];
 */
-import 'dart:io';
 
 void main() {
   List<String> produtos = ["maçã", "banana", "maçã", "laranja", "maçã"];

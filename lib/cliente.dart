@@ -1,6 +1,6 @@
 class Cliente {
   String nomeDoCliente;
-  List<String> _reservas;
+  final List<String> _reservas;
 
   Cliente(this.nomeDoCliente, this._reservas);
 

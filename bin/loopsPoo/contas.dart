@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:loops/conta.dart';
 
 void main() {
@@ -7,6 +5,8 @@ void main() {
   print("");
   Conta contaPaulo = Conta("Paulo", 1000);
   Conta contaValentina = Conta("Valentina", 2000);
+  ContaCorrente contaMarcos = ContaCorrente("Marcos", 1493.92);
+  ContaPoupanca contaJulia = ContaPoupanca("Julia", 12300.82);
 
   List<Conta> contas = <Conta>[contaValentina, contaPaulo];
 
@@ -18,6 +18,11 @@ void main() {
   contaValentina.send(126);
   // Para exibir todas as contas que existem dentro da lista,
   // vamos utilizar um for in para percorrer a conta in Contas
+  contaJulia.receiving(300);
+  contaJulia.printCurrent();
+
+  contaMarcos.send(120);
+  contaMarcos.printCurrent();
 
   print("");
   print("Mostrando todas as contas existentes:");

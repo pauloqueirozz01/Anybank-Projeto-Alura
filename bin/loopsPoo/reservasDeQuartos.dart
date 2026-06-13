@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:loops/cliente.dart';
 
 void main() {

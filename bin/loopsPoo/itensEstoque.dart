@@ -33,6 +33,7 @@ void main() {
   print("");
   print("Atualizando o preço do notebook, acabou de entrar em promoção.");
   print("Qual o novo valor do notebbok?");
+
   double novoPreco = double.parse(stdin.readLineSync()!);
   notebook.addPricing(novoPreco);
 
