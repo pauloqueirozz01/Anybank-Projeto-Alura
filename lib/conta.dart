@@ -16,7 +16,7 @@ class Conta {
 
   void send(double value) {
     _saldo -= value;
-    print("$nome fez uma transferência no valor de $value");
+    print("$nome fez uma transferência no value de $value");
     printCurrent();
     print("");
   }
@@ -33,8 +33,29 @@ class Conta {
 // para recebermos nome e o _saldo, da class Conta
 class ContaCorrente extends Conta {
   ContaCorrente(super.nome, super._saldo);
+
+  double emprestimo = 300;
+
+  @override
+  send(double value) {
+    if (_saldo + emprestimo >= value) {
+      _saldo -= value;
+      print("$nome fez uma transferência no value de $value");
+      printCurrent();
+      // } else {
+      //   print(
+      //     "$nome, não possui saldo suficiente para realizar a transferência no valor de R\$$value",
+      //   );
+    }
+  }
 }
 
 class ContaPoupanca extends Conta {
   ContaPoupanca(super.nome, super._saldo);
+
+  void rendendoDinheiro() {
+    double rendimento = 0.5;
+    _saldo += _saldo * rendimento;
+    print("$nome, seu saldo foi atualizado pelo rendimento de $rendimento%");
+  }
 }

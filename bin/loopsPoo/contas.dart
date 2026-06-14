@@ -19,9 +19,10 @@ void main() {
   // Para exibir todas as contas que existem dentro da lista,
   // vamos utilizar um for in para percorrer a conta in Contas
   contaJulia.receiving(300);
+  contaJulia.rendendoDinheiro();
   contaJulia.printCurrent();
 
-  contaMarcos.send(120);
+  contaMarcos.send(1500);
   contaMarcos.printCurrent();
 
   print("");
