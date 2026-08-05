@@ -7,8 +7,15 @@ void main() {
   Conta contaValentina = Conta("Valentina", 2000);
   ContaCorrente contaMarcos = ContaCorrente("Marcos", 1493.92);
   ContaPoupanca contaJulia = ContaPoupanca("Julia", 12300.82);
+  ContaSalario contaSalarioCatarina = ContaSalario("Catarina", 1800);
 
-  List<Conta> contas = <Conta>[contaValentina, contaPaulo];
+  List<Conta> contas = <Conta>[
+    contaValentina,
+    contaPaulo,
+    contaJulia,
+    contaMarcos,
+    contaSalarioCatarina,
+  ];
 
   contaPaulo.receiving(2500);
   contaPaulo.receiving(500);
@@ -24,6 +31,9 @@ void main() {
 
   contaMarcos.send(1500);
   contaMarcos.printCurrent();
+
+  contaSalarioCatarina.receiving(3450.00);
+  contaSalarioCatarina.printCurrent();
 
   print("");
   print("Mostrando todas as contas existentes:");

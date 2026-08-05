@@ -54,8 +54,31 @@ class ContaPoupanca extends Conta {
   ContaPoupanca(super.nome, super._saldo);
 
   void rendendoDinheiro() {
-    double rendimento = 0.5;
+    double rendimento = 0.05;
     _saldo += _saldo * rendimento;
     print("$nome, seu saldo foi atualizado pelo rendimento de $rendimento%");
   }
+}
+
+class ContaSalario extends Conta {
+  ContaSalario(super.nome, super._saldo);
+
+  @override
+  void receiving(double value) {
+    _saldo += value;
+    print("O seu salário de R\$$value, foi depositado na sua conta.");
+    print("");
+  }
+}
+
+mixin Impost {
+  double taxa = 0.03;
+
+  double calculaImposto(double valor) {
+    return valor * taxa;
+  }
+}
+
+class ContaEmpresa extends Conta with Impost {
+  ContaEmpresa(super.nome, super._saldo);
 }
