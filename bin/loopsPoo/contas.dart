@@ -3,26 +3,18 @@ import 'package:loops/conta.dart';
 void main() {
   print("Sistema de Contas Bancárias - POO em Dart");
   print("");
-  Conta contaPaulo = Conta("Paulo", 1000);
-  Conta contaValentina = Conta("Valentina", 2000);
+
   ContaCorrente contaMarcos = ContaCorrente("Marcos", 1493.92);
   ContaPoupanca contaJulia = ContaPoupanca("Julia", 12300.82);
-  ContaSalario contaSalarioCatarina = ContaSalario("Catarina", 1800);
+  ContaSalario contaSalarioCatarina = ContaSalario(
+    478923190,
+    "Novix",
+    "Catarina",
+    1800,
+  );
 
-  List<Conta> contas = <Conta>[
-    contaValentina,
-    contaPaulo,
-    contaJulia,
-    contaMarcos,
-    contaSalarioCatarina,
-  ];
+  List<Conta> contas = <Conta>[contaJulia, contaMarcos, contaSalarioCatarina];
 
-  contaPaulo.receiving(2500);
-  contaPaulo.receiving(500);
-  contaPaulo.send(200);
-
-  contaValentina.receiving(200);
-  contaValentina.send(126);
   // Para exibir todas as contas que existem dentro da lista,
   // vamos utilizar um for in para percorrer a conta in Contas
   contaJulia.receiving(300);

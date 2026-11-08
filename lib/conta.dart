@@ -1,4 +1,4 @@
-class Conta {
+abstract class Conta {
   String nome;
   double _saldo;
 
@@ -31,6 +31,7 @@ class Conta {
 // Criamos outro tipo de Conta, que ainda é uma Conta.
 // Mas sendo uma ContaCorrente, utilizamos extends Conta,
 // para recebermos nome e o _saldo, da class Conta
+
 class ContaCorrente extends Conta {
   ContaCorrente(super.nome, super._saldo);
 
@@ -60,13 +61,38 @@ class ContaPoupanca extends Conta {
   }
 }
 
+/* 
+Agora, vamos melhorar a classe da conta salário. 
+Você deve saber que a `contaSalario` tem duas características em comum com as contas 
+corrente e poupança: `titular` e `saldo`.
+
+No entanto, ela apresenta três características **diferentes**:
+
+- Variável com o CNPJ da empresa que emprega o(a) titular da conta;
+- Variável do nome da empresa;
+- Um método (função `print`) que diz algo como: 
+  “O salário da $empresa, de CNPJ X no valor de R$xx.x, foi depositado!”
+
+  Aplique essas três características na classe `contaSalario`!
+
+  **Dica:**
+
+- Aplique a técnica de **polimorfismo** para diferenciar a conta salário das contas corrente e poupança.
+*/
+
 class ContaSalario extends Conta {
-  ContaSalario(super.nome, super._saldo);
+  int cnpjNumber;
+  String nomeDaEmpresa;
+
+  ContaSalario(this.cnpjNumber, this.nomeDaEmpresa, String nome, double _saldo)
+    : super(nome, _saldo);
 
   @override
   void receiving(double value) {
     _saldo += value;
-    print("O seu salário de R\$$value, foi depositado na sua conta.");
+    print(
+      "O salário da $nomeDaEmpresa, de CNPJ $cnpjNumber no valor de R$value, foi depositado!",
+    );
     print("");
   }
 }
